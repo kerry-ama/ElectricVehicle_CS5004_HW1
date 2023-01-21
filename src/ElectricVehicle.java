@@ -90,6 +90,11 @@ public class ElectricVehicle {
    * @param stateOfCharge current state of charge of the electric vehicle.
    */
   public void setStateOfCharge(double stateOfCharge) {
+    if (stateOfCharge < 0.15) {
+      stateOfCharge = 0.15;
+    } else if (stateOfCharge > 1.0) {
+      stateOfCharge = 1.0;
+    }
     this.stateOfCharge = stateOfCharge;
   }
 

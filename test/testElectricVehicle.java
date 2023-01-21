@@ -113,4 +113,18 @@ public class testElectricVehicle {
     assertEquals(3.825, Tesla.getEfficiency(), 0.001);
     assertEquals(0.25, Mercedes.getEfficiency(), 0.001);
   }
+
+  @Test
+  public void testSetStateOfCharge(){
+    double stateOfChargeF = 0.17;
+    double stateOfChargeT = 78.0;
+    double stateOfChargeM = 0.05;
+    Ford.setStateOfCharge(stateOfChargeF);
+    Tesla.setStateOfCharge(stateOfChargeT);
+    Mercedes.setStateOfCharge(stateOfChargeM);
+    assertEquals(0.17, Ford.getStateOfCharge(), 0.001);
+    assertEquals(1.0, Tesla.getStateOfCharge(), 0.001);
+    assertEquals(0.15, Mercedes.getStateOfCharge(), 0.001);
+
+  }
 }
