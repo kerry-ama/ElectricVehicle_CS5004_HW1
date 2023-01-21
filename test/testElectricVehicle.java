@@ -114,8 +114,12 @@ public class testElectricVehicle {
     assertEquals(0.25, Mercedes.getEfficiency(), 0.001);
   }
 
+  /**
+   * The method 'testSetStateOfCharge' tests the 'setStateOfCharge'
+   * method of the Electric Vehicle class.
+   */
   @Test
-  public void testSetStateOfCharge(){
+  public void testSetStateOfCharge() {
     double stateOfChargeF = 0.17;
     double stateOfChargeT = 78.0;
     double stateOfChargeM = 0.05;
