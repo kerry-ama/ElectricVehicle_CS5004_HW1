@@ -1,16 +1,24 @@
-import org.junit.Test;
 import org.junit.Before;
+import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * This class tests the Electric Vehicle class instances and methods.
+ *
+ */
 public class testElectricVehicle {
   private ElectricVehicle Ford;
   private ElectricVehicle Tesla;
   private ElectricVehicle Mercedes;
 
-  //creates Electric Vehicle instances
+
+
+  /**
+   * Creates Electric Vehicle object instances.
+   */
   @Before
-  public void setUp(){
+  public void setUp() {
     Ford = new ElectricVehicle("MachE", 68,
             0.95, 2.0);
     Tesla = new ElectricVehicle("Tesla Model S", 200,
@@ -20,23 +28,32 @@ public class testElectricVehicle {
 
   }
 
-  //tests getter method, 'getEfficiency'
+  /**
+   * The 'testEfficiency' method tests the 'getEfficiency' method
+   * of the Electric Vehicle class.
+   */
   @Test
-  public void testEfficiency(){
+  public void testEfficiency() {
     assertEquals(2.0, Ford.getEfficiency(), 0.001);
     assertEquals(4.5, Tesla.getEfficiency(), 0.001);
     assertEquals(0.5, Mercedes.getEfficiency(), 0.001);
   }
 
-  //tests getter method, 'getBatterySize'
+  /**
+   * The 'testBatterySize' method tests the 'getBatterySize' method
+   * of the Electric Vehicle class.
+   */
   @Test
-  public void testBatterySize(){
+  public void testBatterySize() {
     assertEquals(68, Ford.getBatterySize(), 0.001);
     assertEquals(150.0, Tesla.getBatterySize(), 0.001);
     assertEquals(10.0, Mercedes.getBatterySize(), 0.001);
   }
 
-  //tests getter method, 'getStateOfCharge'
+  /**
+   * The 'testStateOfCharge' method tests the 'getStateOfCharge' method
+   * of the Electric Vehicle class.
+   */
   @Test
   public void testStateOfCharge() {
     assertEquals(0.95, Ford.getStateOfCharge(), 0.001);
@@ -44,7 +61,10 @@ public class testElectricVehicle {
     assertEquals(0.15, Mercedes.getStateOfCharge(), 0.001);
   }
 
-  //tests getter method, 'getName'
+  /**
+   * The 'testNameEV' method tests the 'getName' method of the
+   * Electric Vehicle class.
+   */
   @Test
   public void testNameEV() {
     assertEquals("MachE",Ford.getName());
@@ -52,7 +72,10 @@ public class testElectricVehicle {
     assertEquals("Mercedes EQS", Mercedes.getName());
   }
 
-  //tests to string method, 'toString'
+  /**
+   * The 'testToString' method tests the 'toString' method
+   * of the Electric Vehicle class.
+   */
   @Test
   public void testToString() {
     assertEquals("MachE SOC: 95.0% Range (miles): 129.2", Ford.toString());
@@ -60,7 +83,10 @@ public class testElectricVehicle {
     assertEquals("Mercedes EQS SOC: 15.0% Range (miles): 0.8", Mercedes.toString());
   }
 
-  //tests calculation method, 'range'
+  /**
+   * The 'testRange' method tests the 'range' method of the Electric
+   * Vehicle class.
+   */
   @Test
   public void testRange() {
     assertEquals(129.2 ,Ford.range(), 0.001);
@@ -68,10 +94,13 @@ public class testElectricVehicle {
     assertEquals(0.75, Mercedes.range(), 0.001);
   }
 
-  //tests the 'updateEfficiency' method. Current temps within all possible ranges
-  //are tested
+  /**
+   * The 'testUpdateEfficiency' method tests the 'updateEfficiency' method of
+   * the Electric Vehicle class. Current temps within all
+   * possible ranges are tested.
+   */
   @Test
-  public void testUpdateEfficiency(){
+  public void testUpdateEfficiency() {
     double currentTempF = 70.0;
     double currentTempT = 100.0;
     double currentTempM = 10.0;
